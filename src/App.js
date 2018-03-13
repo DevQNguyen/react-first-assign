@@ -6,16 +6,16 @@ import UserOuput from './UserOutput/UserOutput';
 class App extends Component {
   state = {
     users: [
-      { username: 'Ribsy' },
-      { username: 'Bezus' }
+      { userName: 'Ribsy' },
+      { userName: 'Bezus' }
     ]
   }
 
   clickNameChangeHandler = (newName) => {
     this.setState({
       users: [
-        { username: 'Ribsy' },
-        { username: newName }
+        { userName: 'Ribsy' },
+        { userName: newName }
       ]
     })
   }
@@ -23,8 +23,8 @@ class App extends Component {
   userNameChangeHandler = (event) => {
     this.setState({
       users: [
-        { username: event.target.value },
-        { username: 'Bezus' }
+        { userName: event.target.value },
+        { userName: 'Bezus' }
       ]
     })
   }
@@ -39,18 +39,18 @@ class App extends Component {
     return (
       <div className="App" >
         <UserInput changed={this.userNameChangeHandler}
-          username={this.state.users[0].username} />
+          currentUserName={this.state.users[0].userName} />
         <div style={containerStyle}>
-          <UserOuput username={this.state.users[0].username} />
+          <UserOuput userName={this.state.users[0].userName} />
           <UserOuput
             click={this.clickNameChangeHandler.bind(this, 'Elizabeth')}
             changed={this.userNameChangeHandler}
-            username={this.state.users[1].username} />
-          <UserOuput username={this.state.users[0].username} />
+            userName={this.state.users[1].userName} />
+          <UserOuput userName={this.state.users[0].userName} />
           <UserOuput
             click={this.clickNameChangeHandler.bind(this, 'Elizabeth')}
             changed={this.userNameChangeHandler}
-            username={this.state.users[1].username} />
+            userName={this.state.users[1].userName} />
         </div>
       </div >
     );
