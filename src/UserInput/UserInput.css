@@ -1,9 +1,15 @@
 .UserInput {
   background: rgb(209, 245, 245);
-  width: 60%;
+  width: 40%;
   margin: 20px auto;
   padding: 20px;
   border: 1px solid #eee;
   box-shadow: 0 4px 5px #ccc;
-  
+}
+
+.inputStyle {
+  width: 50%;
+  height: 25px;
+  border-radius: 1px;
+  font-size: 1.1rem;
 }

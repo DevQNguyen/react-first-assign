@@ -30,14 +30,29 @@ class App extends Component {
   }
 
   render() {
+    const containerStyle = {
+      width: '85%',
+      margin: '20px auto',
+      border: '2px solid lightgrey'
+    }
+
     return (
-      <div className="App">
-        <UserInput changed={this.userNameChangeHandler} />
-        <UserOuput username={this.state.users[0].username} />
-        <UserOuput
-          click={this.clickNameChangeHandler.bind(this, 'Elizabeth')}
-          changed={this.userNameChangeHandler} />
-      </div>
+      <div className="App" >
+        <UserInput changed={this.userNameChangeHandler}
+          username={this.state.users[0].username} />
+        <div style={containerStyle}>
+          <UserOuput username={this.state.users[0].username} />
+          <UserOuput
+            click={this.clickNameChangeHandler.bind(this, 'Elizabeth')}
+            changed={this.userNameChangeHandler}
+            username={this.state.users[1].username} />
+          <UserOuput username={this.state.users[0].username} />
+          <UserOuput
+            click={this.clickNameChangeHandler.bind(this, 'Elizabeth')}
+            changed={this.userNameChangeHandler}
+            username={this.state.users[1].username} />
+        </div>
+      </div >
     );
   }
 }
